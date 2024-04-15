@@ -1,38 +1,101 @@
-.App {
-  text-align: center;
+.App-header {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;  /* Aligns items at the top to use full height */
+  width: 100%;
+  padding: 20px;
+  min-height: 100vh; /* Ensures header takes at least the height of the viewport */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.content-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;  /* Ensures alignment at the top */
+  width: 100%;
+  gap: 40px;  /* Spacing between main content blocks */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.forms-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Maximizes vertical space between children */
+  height: 100%;  /* Ensures column uses all available height */
+  width: 20%;  /* Width of this column */
+}
+
+.OptimizationMonitor, .CurrentStateTable, .FileUploader, .OptimizationSettingsForm {
+  border: 1px solid #ccc;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin: 10px;
+}
+
+@media (max-width: 768px) {
+  .content-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .forms-column {
+    height: auto;  /* Allows the column to adjust its height on smaller screens */
+    flex-direction: column;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.uploader {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding-bottom: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.uploader input {
+  margin-bottom: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.optimizationForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px;
 }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
+}
+/* EnergyChart.css - Updated with thumb color styles */
+
+/* Styles for the track */
+.input-range__track.input-range__track--active,
+.input-range__track.input-range__track--background {
+  background: rgb(75, 192, 192); /* Color for the active and background track */
+}
+
+/* Styles for the slider thumb */
+.input-range__slider {
+  background: rgb(75, 192, 192); /* Color for the thumb */
+  border: 1px solid #fff; /* White border for better visibility */
+}
+
+/* Ensuring the thumb'CurrentStateTable.js color and appearance on different states */
+.input-range__slider-container .input-range__label--value {
+  color: rgb(75, 192, 192); /* Color for the value label */
+}
+
+.input-range__slider:active,
+.input-range__slider:focus {
+  transform: scale(1.1); /* Slightly increase size on active/focus for better UX */
+  outline: none; /* Removing default focus outline */
+}
+
+/* Additional styles can be added here based on your design requirements */
